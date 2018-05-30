@@ -8,6 +8,16 @@
 
 #import "ViewController.h"
 
+@implementation WindowController
+//- (void)windowWillClose:(NSNotification *)notification
+//{
+//    [[NSApplication sharedApplication] terminate:nil];
+//    exit(0);
+//}
+
+
+@end
+
 @implementation ViewController
 
 - (void)viewDidLoad {

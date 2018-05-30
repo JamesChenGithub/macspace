@@ -9,6 +9,10 @@
 #import <Cocoa/Cocoa.h>
 #import "DotView.h"
 
+@interface WindowController : NSWindowController
+
+@end
+
 @interface ViewController : NSViewController
 @property (weak) IBOutlet DotView *dotView;
 
