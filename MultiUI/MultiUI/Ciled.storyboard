@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="MBK-v9-WBf">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
+    </dependencies>
+    <scenes>
+        <!--Window Controller-->
+        <scene sceneID="POZ-uc-jSh">
+            <objects>
+                <windowController id="MBK-v9-WBf" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="8f8-Pw-4hr">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="425" y="461" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+                        <connections>
+                            <outlet property="delegate" destination="MBK-v9-WBf" id="5DD-lW-WOg"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="xIj-hL-xy5" kind="relationship" relationship="window.shadowedContentViewController" id="LqQ-4t-CkL"/>
+                    </connections>
+                </windowController>
+                <customObject id="kcF-3M-Jni" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-213" y="8"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="Xfd-e9-KqT">
+            <objects>
+                <splitViewController id="xIj-hL-xy5" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="sj3-oH-7LN"/>
+                        <splitViewItem id="0jm-Hk-8as"/>
+                        <splitViewItem id="mYZ-Eh-jTZ"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="YNI-2M-CO7">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <outlet property="delegate" destination="xIj-hL-xy5" id="qF3-KN-S1w"/>
+                        </connections>
+                    </splitView>
+                    <connections>
+                        <outlet property="splitView" destination="YNI-2M-CO7" id="iXZ-w9-xrI"/>
+                        <segue destination="Nz9-Zs-oLz" kind="relationship" relationship="splitItems" id="oZP-jm-Fl7"/>
+                        <segue destination="nwW-Zp-dBU" kind="relationship" relationship="splitItems" id="mh2-pu-ulR"/>
+                        <segue destination="pm8-KK-csh" kind="relationship" relationship="splitItems" id="3wV-IR-KrO"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="2qU-RC-lUi" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="355" y="62"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tbF-49-6f6">
+            <objects>
+                <viewController id="Nz9-Zs-oLz" sceneMemberID="viewController">
+                    <view key="view" id="587-Gp-wy2">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vEN-x8-liJ">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="300"/>
+                                <subviews>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="8cH-oM-zdb" customClass="ColorView">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="300"/>
+                                    </customView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="pPE-Gg-XeW"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="vEN-x8-liJ" firstAttribute="top" secondItem="587-Gp-wy2" secondAttribute="top" id="4qH-5Z-hby"/>
+                            <constraint firstItem="vEN-x8-liJ" firstAttribute="leading" secondItem="587-Gp-wy2" secondAttribute="leading" id="A6S-Qe-K0n"/>
+                            <constraint firstAttribute="bottom" secondItem="vEN-x8-liJ" secondAttribute="bottom" id="UIR-W5-i3c"/>
+                            <constraint firstAttribute="trailing" secondItem="vEN-x8-liJ" secondAttribute="trailing" id="XA9-Bc-eMU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="hf8-gd-UBd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1025" y="-124"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Uvd-p4-5ws">
+            <objects>
+                <viewController id="nwW-Zp-dBU" sceneMemberID="viewController">
+                    <view key="view" id="Fxc-09-BA1">
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ks6-tj-exX">
+                                <rect key="frame" x="0.0" y="0.0" width="160" height="300"/>
+                                <subviews>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="ord-2q-YEB" customClass="ColorView">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="300"/>
+                                    </customView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="Iyd-tK-Xhr"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="160" id="rBw-gi-q6M"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Ks6-tj-exX" secondAttribute="trailing" id="QcN-jp-Rss"/>
+                            <constraint firstAttribute="bottom" secondItem="Ks6-tj-exX" secondAttribute="bottom" id="eaf-sG-5Ge"/>
+                            <constraint firstItem="Ks6-tj-exX" firstAttribute="leading" secondItem="Fxc-09-BA1" secondAttribute="leading" id="gFs-QZ-fdf"/>
+                            <constraint firstItem="Ks6-tj-exX" firstAttribute="top" secondItem="Fxc-09-BA1" secondAttribute="top" id="siF-Fr-RYF"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="sIn-xN-4gI" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1025" y="248"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="A9n-41-tcE">
+            <objects>
+                <splitViewController id="pm8-KK-csh" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="dM5-28-mja"/>
+                        <splitViewItem id="Qqh-al-b4Z"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="paneSplitter" id="icY-lf-AOX">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <outlet property="delegate" destination="pm8-KK-csh" id="79F-UO-38L"/>
+                        </connections>
+                    </splitView>
+                    <connections>
+                        <outlet property="splitView" destination="icY-lf-AOX" id="Rxh-eD-fsn"/>
+                        <segue destination="Izy-pG-iNC" kind="relationship" relationship="splitItems" id="OM8-v1-Vyk"/>
+                        <segue destination="VLM-G1-exc" kind="relationship" relationship="splitItems" id="AYx-qm-e75"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="k94-OI-gtE" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="417" y="798"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eld-Pg-DQ3">
+            <objects>
+                <viewController id="Izy-pG-iNC" sceneMemberID="viewController">
+                    <view key="view" id="Qlf-M9-vbE">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ube-z6-wHJ">
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                                <subviews>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="jfv-1z-zdc" customClass="ColorView">
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                                    </customView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="jfv-1z-zdc" secondAttribute="bottom" id="2ri-IM-uxl"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="400" id="70r-MF-AXi"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="400" id="Kc6-JL-rDA"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ube-z6-wHJ" secondAttribute="bottom" id="1FJ-pq-gMW"/>
+                            <constraint firstItem="ube-z6-wHJ" firstAttribute="top" secondItem="Qlf-M9-vbE" secondAttribute="top" id="GdO-YF-e4I"/>
+                            <constraint firstItem="ube-z6-wHJ" firstAttribute="leading" secondItem="Qlf-M9-vbE" secondAttribute="leading" id="ZlI-tI-am5"/>
+                            <constraint firstAttribute="trailing" secondItem="ube-z6-wHJ" secondAttribute="trailing" id="oIB-tc-C9a"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="b9Q-7b-Mou" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1162" y="620"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bWC-Gg-jTF">
+            <objects>
+                <viewController id="VLM-G1-exc" sceneMemberID="viewController">
+                    <view key="view" id="90i-uy-Cbr">
+                        <rect key="frame" x="0.0" y="0.0" width="440" height="240"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xhi-Xo-vCE">
+                                <rect key="frame" x="0.0" y="0.0" width="440" height="240"/>
+                                <subviews>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="c4X-5v-LiC" customClass="ColorView">
+                                        <rect key="frame" x="0.0" y="0.0" width="440" height="240"/>
+                                    </customView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="4K8-p2-4jx"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="7Vv-uX-ooD"/>
+                                    <constraint firstAttribute="bottom" secondItem="c4X-5v-LiC" secondAttribute="bottom" id="8rc-0M-Vvp"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="400" id="M1V-9o-ASp"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="xhi-Xo-vCE" secondAttribute="bottom" id="4I3-gT-irG"/>
+                            <constraint firstItem="xhi-Xo-vCE" firstAttribute="top" secondItem="90i-uy-Cbr" secondAttribute="top" id="Q9k-Yj-3nG"/>
+                            <constraint firstItem="xhi-Xo-vCE" firstAttribute="leading" secondItem="90i-uy-Cbr" secondAttribute="leading" id="muz-Jk-s9C"/>
+                            <constraint firstAttribute="trailing" secondItem="xhi-Xo-vCE" secondAttribute="trailing" id="ukp-Ic-YtO"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="rUE-A2-aMj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1179" y="1090"/>
+        </scene>
+    </scenes>
+</document>
